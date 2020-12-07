@@ -1,0 +1,21 @@
+{
+  "name": "se",
+  "version": "1.0.0",
+  "description": "Software engineering proect",
+  "main": "app.js",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mysql": "^2.18.1",
+    "socket.io": "^3.0.3",
+    "uniqid": "^5.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kushagar",
+  "license": "ISC"
+}

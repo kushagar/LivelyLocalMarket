@@ -1,0 +1,95 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Lively Local Market</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo mr-auto"><a href="/home">Lively Local Market</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li ><a href="/home">Home</a></li>
+          <li><a href="/cobblers">Cobblers</a></li>
+          <li><a href="/barbers">Barbers</a></li>
+          <li><a href="/groceries" class="active">Groceries</a></li>
+          <li><a href="/fruitvendors">Fruits</a></li>
+          <%if(!user){%>
+          <li class="book-a-table text-center"><a href="/login">Login</a></li>
+          <%}else{%>
+            <li class="book-a-table text-center">
+            <form action="\logout"  method="POST">
+               <input type="submit" class="btn-danger" value="Logout"></li>
+          </form>
+        </li>
+            <%}%>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+  <%if(groceries){%>
+  <div style="padding:10px;margin-top: 100px ;">
+  <%groceries.forEach(function(grocery){%>
+    <div class="container active" style="margin-top: 5px;">
+      
+      <div class="card cardclass lead" >
+       
+          <div class="card-body">
+            <H5>Name:<%=grocery.name%></H5>
+            <H5>Email:<%=grocery.email%></H5>
+            <a href="/dealers/<%=grocery.email%>" class="btn btn-primary  float-right">More Info</a>
+          </div>
+       </div> 
+   </div>
+  <%})%>
+</div>
+<%}else{%>
+  <header class="jumbotron "  style="background-color:black; margin-top: 150px; text-align: center;">
+    <h1 class="display-3" style="color:white;">Sorry!</h1>
+    <p class="lead" style="color:white;">Seems like no Grocery Shop near you registered :(</p>
+  </header>
+  
+  <%}%>   
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
